@@ -1,0 +1,94 @@
+body {
+    font-family: 'Playfair Display', serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #F5F5DC, #A2D5F2);
+    z-index: -1;
+    transform: translateZ(-1px) scale(2); /* Параллакс-эффект */
+  }
+  
+  .container {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Стеклянный эффект */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+  }
+  
+  .photo {
+    flex: 0.4;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .photo img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Сохраняем пропорции фото */
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+  }
+  
+  .text {
+    flex: 0.6;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #444444;
+  }
+  
+  p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555555;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .photo {
+      height: 300px;
+      flex: 1;
+    }
+  
+    .text {
+      padding: 20px;
+      flex: 1;
+    }
+  }
