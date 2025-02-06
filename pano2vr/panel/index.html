@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Интерактивная панель</title>
+  <title>Мой уникальный сайт</title>
   <link rel="stylesheet" href="styles.css">
   <!-- Подключаем библиотеки -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 </head>
 <body>
+  <div class="snowfall"></div> <!-- Эффект снега -->
   <div class="background"></div> <!-- Фон для параллакса -->
   <div class="container">
-    <div class="photo" data-tilt>
-      <img src="pic123.jpg" alt="Мое фото">
+    <div class="photo-wrapper">
+      <div class="photo-carousel">
+        <img src="pic1.jpg" alt="Фото 1" class="active">
+        <img src="pic2.jpg" alt="Фото 2">
+        <img src="pic3.jpg" alt="Фото 3">
+      </div>
+      <button class="arrow left">◄</button>
+      <button class="arrow right">►</button>
     </div>
     <div class="text">
       <h1>Интерактивная панель</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur rem praesentium tenetur dolor temporibus ducimus dignissimos sint veniam, alias, inventore earum, quidem esse minima sunt nulla natus delectus perspiciatis illo!
-      Nisi nostrum autem blanditiis mollitia accusamus est rem perspiciatis atque dolorem odio porro ut, excepturi expedita error ipsa suscipit sint deserunt veritatis id dolorum illo iure obcaecati. Consequuntur, molestias mollitia!
-      Corrupti necessitatibus nemo rem. Dicta cumque, voluptas molestias qui facere nisi ab asperiores nam doloribus modi ipsa provident et! Veritatis doloribus sed omnis delectus, dignissimos iusto aut libero vero sit.
-      Laborum expedita odit in eum eos eaque repellat error, quos aut incidunt deleniti natus nobis veniam itaque dolores porro atque aperiam dicta labore laboriosam! Facilis quos eum ad ut optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo saepe odit amet nesciunt est vitae, delectus repellendus in reiciendis non dignissimos sunt, optio adipisci mollitia deleniti, iusto illum? Sed, voluptate.
+      Nihil, odit hic? Non eos odio architecto nulla voluptatum eveniet, doloribus omnis, nihil aspernatur possimus ad. Incidunt, voluptas temporibus accusantium, sed magni nesciunt aliquam ab rem deleniti, similique repellat nostrum.</p>
     </div>
   </div>
 
-  <!-- Подключаем GSAP, ScrollReveal и Tilt.js -->
+  <!-- Подключаем GSAP и ScrollReveal -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

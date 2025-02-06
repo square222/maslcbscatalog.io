@@ -1,94 +1,171 @@
 body {
-    font-family: 'Playfair Display', serif;
-    color: #333333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #F5F5DC, #A2D5F2);
-    z-index: -1;
-    transform: translateZ(-1px) scale(2); /* Параллакс-эффект */
-  }
-  
+  font-family: 'Playfair Display', serif;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.snowfall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #F5F5DC, #A2D5F2);
+  z-index: -1;
+  transform: translateZ(-1px) scale(2); /* Параллакс-эффект */
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); /* Стеклянный эффект */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.photo-wrapper {
+  flex: 0 0 40%; /* Фиксированная ширина для фото */
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px; /* Увеличиваем отступ слева */
+}
+
+.photo-carousel {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; /* Пропорции 4:3 (3/4 = 0.75) */
+}
+
+.photo-carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Сохраняем пропорции 4:3 */
+  border-radius: 15px; /* Закругленные края */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.photo-carousel img.active {
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  color: #333333;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: background 0.3s ease;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.text {
+  flex: 1; /* Текст занимает оставшееся пространство */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #444444;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555555;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
   .container {
-    display: flex;
-    max-width: 1200px;
-    width: 90%;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); /* Стеклянный эффект */
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 20px;
-  }
-  
-  .photo {
-    flex: 0.4;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    transform-style: preserve-3d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .photo img {
-    width: auto;
-    height: 100%;
-    max-width: 100%;
-    object-fit: contain; /* Сохраняем пропорции фото */
-    border-radius: 15px;
-    transition: transform 0.5s ease;
-  }
-  
-  .text {
-    flex: 0.6;
-    padding: 40px;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: auto;
   }
-  
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #444444;
+
+  .photo-wrapper {
+    height: auto;
+    flex: 1;
+    margin-left: 0; /* Убираем отступ на мобильных */
+    padding-bottom: 75%; /* Пропорции 4:3 */
   }
-  
-  p {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555555;
+
+  .text {
+    padding: 20px;
+    flex: 1;
   }
-  
-  /* Адаптивность */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      height: auto;
-    }
-  
-    .photo {
-      height: 300px;
-      flex: 1;
-    }
-  
-    .text {
-      padding: 20px;
-      flex: 1;
-    }
+}
+
+/* Стили для снежинок */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
   }
+}
