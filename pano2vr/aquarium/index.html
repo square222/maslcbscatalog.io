@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой уникальный сайт</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Подключаем библиотеки -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+</head>
+<body>
+  <div class="particles"></div> <!-- Эффект частиц -->
+  <div class="background"></div> <!-- Фон для параллакса -->
+  <div class="container">
+    <div class="photo-wrapper">
+      <div class="photo-carousel">
+        <img src="pic1.jpg" alt="Фото 1" class="active">
+        <img src="pic2.jpg" alt="Фото 2">
+      </div>
+      <button class="arrow left">◄</button>
+      <button class="arrow right">►</button>
+    </div>
+    <div class="text">
+      <h1>Аквариум</h1>
+      <p>Аквариум создаёт спокойную и расслабляющую атмосферу в пространстве. Наблюдение за рыбками помогает отвлечься, снизить напряжение и настроиться на спокойное чтение.</p>
+    </div>
+  </div>
+
+  <!-- Подключаем GSAP и ScrollReveal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="script.js"></script>
+</body>
+</html>
