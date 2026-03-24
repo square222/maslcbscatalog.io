@@ -7,7 +7,7 @@ pageTitle.textContent = "Мой каталог";
 // Укажите ссылки на ваши страницы в массиве
 const links = [
     "https://disk.yandex.ru/d/qgNVgTFmxCcWAQ",
-    "https://disk.yandex.ru/d/JgSLp0Yu4aLRmw",
+    "https://disk.yandex.ru/d/5H-26YqDtMn51g",
     "https://disk.yandex.ru/d/RL6MPzFylNmdcw",
     "https://disk.yandex.ru/d/hdeRo6P6s1uUQg",
     "https://disk.yandex.ru/d/fnlq1YzW2BJRdQ",
